@@ -4,23 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="main">
-        <table>
-            <tr>
-                <td><label for="custName"></label></td>
-                <td><input type="text" id="custName" placeholder="Enter Customer Name" /></td>
-            </tr>
-            <tr>
-                <td><label for="purcAmt"></label></td>
-                <td><input id="purcAmt" type="text" placeholder="Enter the Purchase Amount"/></td>
-            </tr>
-            <tr>
-                <td colspan="1"><button>Submit</button></td>
-                
-            </tr>
-        </table>
+        <div class="subMain">
+            <table>
+                <tr>
+                    <td><label for="custName">Customer Name</label></td>
+                    <td><input type="text" id="custName" placeholder="Enter Customer Name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="purcAmt">Purchase Amount</label></td>
+                    <td><input id="purcAmt" type="text" placeholder="Enter the Purchase Amount"/></td>
+                </tr>
+                <tr>   
+                    <td></td>
+                    <td><button>Submit</button></td>
+                    
+                </tr>
+            </table>
+        </div>
+        
     </div>
 </body>
 </html>
