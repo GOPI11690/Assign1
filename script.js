@@ -26,5 +26,24 @@ if(purchaseAmt<100){
     console.log("Thank You For Visiting Us!!!");
 }
 else{
-    console.log(`Welcome ${customerName}! You have rewarded Rs.${voucherValue} Gift Voucher for your ${bonusPoints} Bonus Points...`);
+    voucherValue=Math.round(bonusPoints);
+    
+    console.log(`Welcome ${customerName}!`);
+    console.log(`Your Purchase Amount Rs. ${purchaseAmt}.\n You have rewarded Rs.${voucherValue} Gift Voucher for your ${bonusPoints} Bonus Points...`);
+    let optionNum=parseInt(prompt("You can Select Reward Points from Bonus Points by choosing below Options : \n1 to redeem all \n2 to redeem 50%  \n0 to Cancel"));
+    switch(optionNum){
+        case 0:
+            console.log(`You cancelled the redeem option \nYou have pay Rs. ${purchaseAmt} \nYou ${voucherValue} remaining Gift Voucher`);
+            break;
+        case 1:
+            console.log(`Congratulations! You Redeemed all your Gift Voucher \nYou have pay Rs. ${purchaseAmt-voucherValue} \nYou 0 remaining Reward Points`);
+            break;
+        case 2:
+            voucherValue=Math.round(voucherValue/2);
+            console.log(`Congratulations! You Redeemed ${voucherValue} Gift Voucher \nYou have pay Rs. ${purchaseAmt-voucherValue} \nYou ${voucherValue} remaining Gift Voucher`);
+            break;
+        default:
+            console.log("Enter '0', '1' or '2' options");
+    }
+
 }
