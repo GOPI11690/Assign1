@@ -33,3 +33,6 @@ td input, td button{
     font-size: large;
     text-align: center;
 }
+.btnSubmit{
+    text-align: center;
+}

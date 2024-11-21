@@ -20,8 +20,8 @@
                     <td><input id="purcAmt" type="number" placeholder="Enter the Purchase Amount" required/></td>
                 </tr>
                 <tr>   
-                    <td></td>
-                    <td><button onclick="calculate()">Submit</button></td>
+                    
+                    <td class="btnSubmit" colspan="2"><button onclick="calculate()">Submit</button></td>
                     
                 </tr>
                 <tr><td colspan="2"><p id="welcomeUser"></p></td>
@@ -64,14 +64,14 @@
                 
                 switch(optionNum){
                     case 0:
-                        rewardUser.innerHTML=`You cancelled the redeem option \nYou have pay Rs. ${purcAmt} \nYou ${bonusPoints} remaining Gift Voucher`;
+                        rewardUser.innerHTML=`You cancelled the redeem option \n You have pay Rs. ${purcAmt} \nYou ${bonusPoints} remaining Gift Voucher`;
                         break;
                     case 1:
-                        rewardUser.innerHTML=`Congratulations! You Redeemed all your Gift Voucher \nYou have to pay Rs. ${purcAmt-bonusPoints} \nYou 0 remaining Reward Points`;
+                        rewardUser.innerHTML=`Congratulations! You Redeemed all your Gift Voucher \n You have to pay Rs. ${purcAmt-bonusPoints} \nYou 0 remaining Reward Points`;
                         break;
                     case 2:
                         bonusPoints=Math.round(bonusPoints/2);
-                        rewardUser.innerHTML=`Congratulations! You Redeemed ${bonusPoints} Gift Voucher \nYou have pay Rs. ${purcAmt-bonusPoints} \nYou have ${bonusPoints} remaining Gift Voucher`;
+                        rewardUser.innerHTML=`Congratulations! You Redeemed ${bonusPoints} Gift Voucher \n You have pay Rs. ${purcAmt-bonusPoints} \nYou have ${bonusPoints} remaining Gift Voucher`;
                         break;
                     default:
                         rewardUser.innerHTML="Enter '0', '1' or '2' options";
