@@ -13,11 +13,11 @@
             <table>
                 <tr>
                     <td><label for="custName">Customer Name</label></td>
-                    <td><input type="text" id="custName" placeholder="Enter Customer Name" /></td>
+                    <td><input type="text" id="custName" placeholder="Enter Customer Name" required/></td>
                 </tr>
                 <tr>
                     <td><label for="purcAmt">Purchase Amount</label></td>
-                    <td><input id="purcAmt" type="number" placeholder="Enter the Purchase Amount"/></td>
+                    <td><input id="purcAmt" type="number" placeholder="Enter the Purchase Amount" required/></td>
                 </tr>
                 <tr>   
                     <td></td>
@@ -39,7 +39,8 @@
         let welcomePara=document.getElementById("welcomeUser");
         let rewardUser=document.getElementById("rewardUser");
         function calculate(){
-            let custName=document.getElementById("custName").value;
+            let custmName=document.getElementById("custName").value;
+            let custName=custmName.toUpperCase();
             let purcAmt=parseInt(document.getElementById("purcAmt").value);
             let bonus=0;
             if(purcAmt>=100 && purcAmt<1000){
@@ -53,12 +54,12 @@
             else{
                 bonus=0.2;
             }
-            let bonusPoints= purcAmt*bonus;
+            let bonusPoints= Math.round(purcAmt*bonus);
             if(purcAmt<100){
                 welcomePara.innerHTML="Thank You For Visiting Us!!!";
             }
             else{
-                welcomePara.innerHTML=`Welcome ${custName}! \n  Your Purchase Amount Rs. ${purcAmt}.\n  You have rewarded Rs.${bonusPoints} Gift Voucher for your ${bonusPoints} Bonus Points...`;
+                welcomePara.innerHTML=`Welcome ${custName}!  Your Purchase Amount Rs. ${purcAmt}.\n  You have rewarded Rs.${bonusPoints} Gift Voucher for your ${bonusPoints} Bonus Points...`;
                 let optionNum=parseInt(prompt("You can Select Reward Points from Bonus Points by choosing below Options : \n1 to redeem all \n2 to redeem 50%  \n0 to Cancel"));
                 
                 switch(optionNum){
@@ -66,7 +67,7 @@
                         rewardUser.innerHTML=`You cancelled the redeem option \nYou have pay Rs. ${purcAmt} \nYou ${bonusPoints} remaining Gift Voucher`;
                         break;
                     case 1:
-                        rewardUser.innerHTML=`Congratulations! You Redeemed all your Gift Voucher \nYou have pay Rs. ${purcAmt-bonusPoints} \nYou 0 remaining Reward Points`;
+                        rewardUser.innerHTML=`Congratulations! You Redeemed all your Gift Voucher \nYou have to pay Rs. ${purcAmt-bonusPoints} \nYou 0 remaining Reward Points`;
                         break;
                     case 2:
                         bonusPoints=Math.round(bonusPoints/2);
